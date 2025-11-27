@@ -1,4 +1,5 @@
-<img width="2810" height="1745" alt="Screenshot 2025-11-27 214120" src="https://github.com/user-attachments/assets/2ee9f299-3f08-4df7-9ee4-321d6484fb55" />
+<img width="2950" height="1647" alt="Screenshot 2025-11-27 222917" src="https://github.com/user-attachments/assets/4dce1c06-32cc-4b86-9968-789e30c89d40" />
+
 
 Loan Approval Prediction Web App
 💳 Loan Approval Prediction Web App
