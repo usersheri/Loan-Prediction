@@ -109,7 +109,7 @@ RiskScore: (value)
 ▶️ How to Run Locally
 1. Clone the repository:
 git clone https://github.com/usersheri/loan-approval-prediction.git
-cd loan-approval-prediction
+cd Loan-prediction
 
 2. Install dependencies:
 pip install flask pandas pickle5
