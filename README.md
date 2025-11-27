@@ -108,7 +108,7 @@ RiskScore: (value)
 
 ▶️ How to Run Locally
 1. Clone the repository:
-git clone https://github.com/yourusername/loan-approval-prediction.git
+git clone https://github.com/usersheri/loan-approval-prediction.git
 cd loan-approval-prediction
 
 2. Install dependencies:
