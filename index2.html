@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Loan Approval Prediction</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #454646;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background:#2e2e2e;
+            padding: 15px;
+            border-radius: 13px;
+            width: 950px;       /* Wider for 3 columns */
+            height: 100vh;
+            overflow-y: auto;
+            box-shadow: 0 0 15px rgb(255, 255, 255);
+        }
+
+        h2 {
+            text-align: center;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* 4 columns */
+            gap: 10px 30px; /* row gap, column gap */
+        }
+
+        label {
+            font-weight: bold;
+            color: #e6e6e6
+        }
+
+        input, select {
+            background:#2e2e2e;
+            color: #ffffff;
+            width: 100%;
+            padding: 10px;
+            margin-top: 4px;
+            border-radius: 8px;
+            border: 1px solid #aaa;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            background: #ffffff;
+            color: rgb(19, 19, 19);
+            border-radius: 8px;
+            font-size: 20px;
+            cursor: pointer;
+            margin-top: 25px;
+        }
+
+        button:hover {
+            background: #505151;
+        }
+
+        /* h3 {
+            text-align: center;
+            margin-top: 14px;
+            color: #bd0e0e;
+        } */
+         .prediction-label {
+    color: #ffffff;       /* Label color */
+    font-weight: bold;
+}
+
+.prediction-result {
+    color: #186718;       /* Output value color */
+    font-weight: bold;
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Loan Approval Prediction</h2>
+
+        <form action="/predict" method="POST">
+
+            <div class="form-grid">
+
+                <div>
+                    <label>Age:</label>
+                    <input type="number" name="Age" required>
+                </div>
+
+                <div>
+                    <label>AnnualIncome:</label>
+                    <input type="number" name="AnnualIncome" required>
+                </div>
+
+                <div>
+                    <label>CreditScore:</label>
+                    <input type="number" name="CreditScore" required>
+                </div>
+
+                <div>
+                    <label>EducationLevel:</label>
+                    <select name="EducationLevel" required>
+                        <option value="High School">High School</option>
+                        <option value="Associate">Associate</option>
+                        <option value="Bachelor">Bachelor</option>
+                        <option value="Master">Master</option>
+                        <option value="Doctorate">Doctorate</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label>Experience:</label>
+                    <input type="number" name="Experience" required>
+                </div>
+
+                <div>
+                    <label>LoanAmount:</label>
+                    <input type="number" name="LoanAmount" required>
+                </div>
+
+                <div>
+                    <label>LoanDuration:</label>
+                    <input type="number" name="LoanDuration" required>
+                </div>
+
+                <div>
+                    <label>MonthlyDebtPayments:</label>
+                    <input type="number" name="MonthlyDebtPayments" required>
+                </div>
+
+                <div>
+                    <label>BankruptcyHistory:</label>
+                    <input type="number" name="BankruptcyHistory" required>
+                </div>
+
+                <div>
+                    <label>PreviousLoanDefaults:</label>
+                    <input type="number" name="PreviousLoanDefaults" required>
+                </div>
+
+                <div>
+                    <label>LengthOfCreditHistory:</label>
+                    <input type="number" name="LengthOfCreditHistory" required>
+                </div>
+
+                <div>
+                    <label>TotalAssets:</label>
+                    <input type="number" name="TotalAssets" required>
+                </div>
+
+                <div>
+                    <label>MonthlyIncome:</label>
+                    <input type="number" name="MonthlyIncome" required>
+                </div>
+
+                <div>
+                    <label>NetWorth:</label>
+                    <input type="number" name="NetWorth" required>
+                </div>
+
+                <div>
+                    <label>BaseInterestRate:</label>
+                    <input type="number" step="0.01" name="BaseInterestRate" required>
+                </div>
+
+                <div>
+                    <label>InterestRate:</label>
+                    <input type="number" step="0.01" name="InterestRate" required>
+                </div>
+
+                <div>
+                    <label>MonthlyLoanPayment:</label>
+                    <input type="number" name="MonthlyLoanPayment" required>
+                </div>
+
+                <div>
+                    <label>TotalDebtToIncomeRatio:</label>
+                    <input type="number" step="0.01" name="TotalDebtToIncomeRatio" required>
+                </div>
+
+            </div>
+
+            <button type="submit">Predict</button>
+
+        </form>
+
+        <div class="prediction-box">
+    <span class="prediction-label">Loan Status:</span>
+    <span class="prediction-result">{{ loan_status }}</span>
+    <br>
+
+    <span class="prediction-label">Risk Score:</span>
+    <span class="prediction-result">{{ risk_score }}</span>
+</div>
+
+    </div>
+
+</body>
+</html>
